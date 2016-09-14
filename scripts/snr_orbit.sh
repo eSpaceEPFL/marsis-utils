@@ -5,6 +5,6 @@
 
 for f in ${@: 3}
 do
-    qi_orbit.py $f $1 $2
+    snr_orbit.py $f $1 $2
 done
 

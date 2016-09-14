@@ -3,4 +3,4 @@
 # $2 -> xsl_tranform_model
 # $.. -> file list
 
-parallel --gnu raw_snr2gml.sh ::: $1 ::: $2 ::: ${@: 3}
+parallel --gnu marsis_geo2gml.sh ::: $1 ::: $2 ::: ${@: 3}

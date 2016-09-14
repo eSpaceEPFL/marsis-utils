@@ -3,5 +3,5 @@
 # $2 -> track qi file
 # $.. -> file list
 
-parallel --gnu qi_orbit.sh ::: $1 ::: $2 ::: ${@: 3}
+parallel --gnu snr_orbit.sh ::: $1 ::: $2 ::: ${@: 3}
 
