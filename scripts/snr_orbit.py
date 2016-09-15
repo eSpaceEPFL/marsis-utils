@@ -19,7 +19,7 @@ JPEG = 0
 
 orbit_file = sys.argv[1]
 xml_file = sys.argv[2]
-QI_file = sys.argv[3]
+SNR_file = sys.argv[3]
 
 data = mr.RawReader(xml_file, orbit_file)
 qiw = qi.Track1(data)
@@ -49,6 +49,6 @@ for attr in attr_name:
 csvw = mw.CsvWriter(qiman)
 csvw.write(orbit_file.split('/')[-1][:-4]+'_snr.csv')
 
-fqi = open(QI_file, 'a')
+fqi = open(SNR_file, 'a')
 fqi.write(str(data.OrbitNumber[0])+' '+str(qiw.qi_f1)+' '+str(qiw.qi_f2)+'\r\n')
 fqi.close()
