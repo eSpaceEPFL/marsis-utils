@@ -25,7 +25,7 @@ data = mr.RawReader(xml_file, orbit_file)
 qiw = qi.Track1(data)
 qir = qi.Radargram1(data)
 
-title = str(data.OrbitNumber[0]) + '   (QIf1: ' + str(qiw.qi_f1) + ')   (QIf2: ' + str(qiw.qi_f2)+')'
+title = str(data.Orbit[0]) + '   (QIf1: ' + str(qiw.qi_f1) + ')   (QIf2: ' + str(qiw.qi_f2)+')'
 
 if JPEG:
     mp.qirplot(qir,qiw, title, figfile = str(data.OrbitNumber[0])+'.jpg')
@@ -50,5 +50,5 @@ csvw = mw.CsvWriter(qiman)
 csvw.write(orbit_file.split('/')[-1][:-4]+'_snr.csv')
 
 fqi = open(SNR_file, 'a')
-fqi.write(str(data.OrbitNumber[0])+' '+str(qiw.qi_f1)+' '+str(qiw.qi_f2)+'\r\n')
+fqi.write(str(data.Orbit[0])+' '+str(qiw.qi_f1)+' '+str(qiw.qi_f2)+'\r\n')
 fqi.close()
