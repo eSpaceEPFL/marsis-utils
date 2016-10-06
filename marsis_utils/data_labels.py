@@ -15,14 +15,14 @@ from csv import reader as csv_reader
 
 class L2Labels(object):
 
-    def __init__(self):
+    def __init__(self, qi_file = None):
 #        self.data_dict = data_dict
         self.first_orbit = []
         self.phase_name = []
         self.qi = {}
 
         self._read_mission_phases()
-        self._read_quality_ids()
+        self._read_quality_ids(qi_file = qi_file)
 
         self.creation_time = None
 
@@ -249,7 +249,7 @@ class L2Labels(object):
         if target_name.find('PHOBOS') >= 0:
             return '"SATELLITE"'
 
-    def _read_quality_ids(self, qi_file = '/home/federico/Documents/iMars/labelPDS/qi/qi.txt'):
+    def _read_quality_ids(self, qi_file = None):
         qi_fh = open(qi_file)
         csr=csv_reader(qi_fh, delimiter = ' ')
         for row in csr:

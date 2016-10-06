@@ -34,9 +34,9 @@ lab_dir = None
 
 xml_file = sys.argv[1]
 
-l2_lab = dl.L2Labels()
+l2_lab = dl.L2Labels(sys.argv[2])
 
-file_list = sys.argv[2:]
+file_list = sys.argv[3:]
 
 if len(file_list) == 1:
     file_list = file_list[0].split(";")
